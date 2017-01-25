@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ReleaseProjectFiles Include="$(SolutionDirectory)Core\Core.csproj">
+			<CreateDocumentationFile>False</CreateDocumentationFile>
+		</ReleaseProjectFiles>
+    <ReleaseProjectFiles Include="$(SolutionDirectory)Windows\Windows.csproj">
+			<CreateDocumentationFile>False</CreateDocumentationFile>
+      <!--<CreateNuGetPackageWithSymbolServerSupport>False</CreateNuGetPackageWithSymbolServerSupport>-->
+      <!--<ExcludeFromDocumentation>False</ExcludeFromDocumentation>-->
+		</ReleaseProjectFiles>
+		<UnitTestProjectFiles Include="$(SolutionDirectory)Windows.UnitTests\Windows.UnitTests.csproj"/>
+		<!--<IntegrationTestProjectFiles Include="$(SolutionDirectory)IntegrationTests\IntegrationTests.csproj">
+			--><!-- Optional Metadata to override the defaults: --><!--
+			<IsDatabaseTest>False</IsDatabaseTest>
+			<IsWebTest>False</IsWebTest>
+			<TestingSetupBuildFile>$(SolutionDirectory)Build\TestingSetup.build</TestingSetupBuildFile>
+			<ExecutionRuntime>net-4.5</ExecutionRuntime>
+		</IntegrationTestProjectFiles>-->
+	</ItemGroup>
+</Project>
