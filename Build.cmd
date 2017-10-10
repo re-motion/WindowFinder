@@ -5,7 +5,7 @@ set log-dir=build\BuildOutput\log
 set nuget-bin=build\BuildOutput\temp\nuget-bin
 set nuget=%nuget-bin%\nuget.exe
 set nuget-download=powershell.exe -NoProfile -Command "& {(New-Object System.Net.WebClient).DownloadFile('https://www.nuget.org/nuget.exe','%nuget%')}"
-set solutionFile=Remotion.Windowfinder.sln
+set solutionFile=Remotion-Windowfinder.sln
 
 if not exist remotion.snk goto nosnk
 

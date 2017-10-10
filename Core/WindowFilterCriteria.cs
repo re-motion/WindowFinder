@@ -15,13 +15,26 @@
 // along with re-motion; if not, see http://www.gnu.org/licenses.
 // 
 using System;
-using System.Reflection;
+using System.Text.RegularExpressions;
+using JetBrains.Annotations;
 
-[assembly: AssemblyCompany ("rubicon IT GmbH")]
-[assembly: AssemblyProduct ("re-motion (www.re-motion.org)")]
-[assembly: AssemblyCopyright ("Copyright (c) rubicon IT GmbH, www.rubicon.eu - Licensed under GNU LGPL 2.1 (or later)")]
-[assembly: AssemblyTrademark ("")]
-[assembly: AssemblyConfiguration ("Build type: Debug")]
-[assembly: AssemblyVersion ("2.0.0.0")]
-[assembly: AssemblyFileVersion ("2.0.0.30000")]
-[assembly: AssemblyInformationalVersion ("2.0.0+Debug")]
+namespace Remotion.WindowFinder
+{
+  /// <summary>
+  /// Contains the filter criteria used by <see cref="IWindowFinder"/>.
+  /// </summary>
+  public sealed class WindowFilterCriteria
+  {
+    public bool ExcludeOwnProcess { get; set; }
+
+    public int? ProcessID { get; set; }
+
+    [CanBeNull]
+    public Regex ClassName { get; set; }
+
+    [CanBeNull]
+    public Regex WindowTitle { get; set; }
+
+    public bool IncludeChildWindows { get; set; }
+  }
+}

@@ -15,13 +15,30 @@
 // along with re-motion; if not, see http://www.gnu.org/licenses.
 // 
 using System;
-using System.Reflection;
+using System.Text.RegularExpressions;
 
-[assembly: AssemblyCompany ("rubicon IT GmbH")]
-[assembly: AssemblyProduct ("re-motion (www.re-motion.org)")]
-[assembly: AssemblyCopyright ("Copyright (c) rubicon IT GmbH, www.rubicon.eu - Licensed under GNU LGPL 2.1 (or later)")]
-[assembly: AssemblyTrademark ("")]
-[assembly: AssemblyConfiguration ("Build type: Debug")]
-[assembly: AssemblyVersion ("2.0.0.0")]
-[assembly: AssemblyFileVersion ("2.0.0.30000")]
-[assembly: AssemblyInformationalVersion ("2.0.0+Debug")]
+namespace Remotion.WindowFinder.Windows
+{
+  /// <summary>
+  /// Contains all information required by <see cref="EnumChildWindowsProc"/>.
+  /// </summary>
+  public sealed class WindowFinderEnumChildWindowsProcContext : WindowFinderEnumWindowsProcContextBase
+  {
+    private readonly WindowInformation _parentWindow;
+
+    public WindowFinderEnumChildWindowsProcContext (
+        IWin32WindowsNativeMethods nativeMethods,
+        Regex classNameConstraint,
+        Regex windowTextConstraint,
+        WindowInformation parentWindow)
+        : base (nativeMethods, classNameConstraint, windowTextConstraint)
+    {
+      _parentWindow = parentWindow;
+    }
+
+    public WindowInformation ParentWindow
+    {
+      get { return _parentWindow; }
+    }
+  }
+}
