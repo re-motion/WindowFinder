@@ -33,7 +33,7 @@
     <SkipDocumentation>True</SkipDocumentation>
     <SkipNuGetOrg>True</SkipNuGetOrg>
     <SkipSourceLinks>True</SkipSourceLinks>
-    <SkipNuGet>False</SkipNuGet>
+    <SkipNuGet>True</SkipNuGet>
     <SkipDependDB>True</SkipDependDB>
   </PropertyGroup>
   
