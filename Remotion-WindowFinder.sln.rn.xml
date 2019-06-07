@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CustomizeVSWindowTitle>
+  <SettingsSet
+    AppendedString=" "
+    PatternIfRunningMode="RM-WindowFinder - [gitBranchName] (Running)"
+    PatternIfBreakMode="RM-WindowFinder - [gitBranchName] (Debugging)"
+    PatternIfDesignMode="RM-WindowFinder - [gitBranchName]" />
+</CustomizeVSWindowTitle>
