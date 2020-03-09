@@ -83,6 +83,8 @@
           Platforms=$(Platforms);
           DatabaseSystems=$(DatabaseSystems);
           Browsers=$(Browsers);
+          ExecutionRuntimes=$(ExecutionRuntimes);
+          TargetRuntimes=$(TargetRuntimes);
           TestCategoriesToExclude=$(TestCategoriesToExclude);
       </BuildProperties>
     </PropertyGroup>

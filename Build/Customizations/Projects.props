@@ -9,7 +9,17 @@
       <!--<CreateNuGetPackageWithSymbolServerSupport>False</CreateNuGetPackageWithSymbolServerSupport>-->
       <!--<ExcludeFromDocumentation>False</ExcludeFromDocumentation>-->
 		</ReleaseProjectFiles>
-		<UnitTestProjectFiles Include="$(SolutionDirectory)Windows.UnitTests\Windows.UnitTests.csproj"/>
+		<UnitTestProjectFiles Include="$(SolutionDirectory)Windows.UnitTests\Windows.UnitTests.csproj">
+			<TestConfiguration>
+				Win_NET45  + NET45  + NoBrowser + NoDB + Debug   + x86;
+				Win_NET45  + NET45  + NoBrowser + NoDB + Release + x86;
+				Win_NET45  + NET45  + NoBrowser + NoDB + Debug   + x64;
+				Win_NET45  + NET45  + NoBrowser + NoDB + Release + x64;
+
+				<!-- Local-->
+				LocalMachine  + NET45  + NoBrowser + NoDB + Debug + x86;
+			</TestConfiguration>
+		</UnitTestProjectFiles>
 		<!--<IntegrationTestProjectFiles Include="$(SolutionDirectory)IntegrationTests\IntegrationTests.csproj">
 			--><!-- Optional Metadata to override the defaults: --><!--
 			<IsDatabaseTest>False</IsDatabaseTest>
