@@ -27,15 +27,17 @@ namespace Remotion.WindowFinder.Windows.UnitTests
   public class NativeWindowFinderTest_ErrorHandling : NativeWindowFinderTestBase
   {
     [Test]
-    [ExpectedException (typeof (Win32Exception), ExpectedMessage = "Error executing 'EnumWindows'. Unknown error (0xffffffff)")]
     public void FindWindows_HandlesEnumWindowsReturnedFalse ()
     {
       NativeMethodsStub.Stub (stub => stub.EnumWindows (null, null))
           .IgnoreArguments()
           .WhenCalled (mi => NativeMethodsStub.Stub (stub => stub.GetLastWin32Error()).Return (-1).Repeat.Once())
           .Return (false);
-
-      WindowFinder.FindWindows (new WindowFilterCriteria());
+      Assert.That (
+          () => WindowFinder.FindWindows (new WindowFilterCriteria()),
+          Throws.InstanceOf<Win32Exception>()
+              .With.Message.EqualTo (
+                  "Error executing 'EnumWindows'. Unknown error (0xffffffff)"));
     }
 
     [Test]
