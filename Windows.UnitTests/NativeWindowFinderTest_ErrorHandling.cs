@@ -33,6 +33,7 @@ namespace Remotion.WindowFinder.Windows.UnitTests
           .IgnoreArguments()
           .WhenCalled (mi => NativeMethodsStub.Stub (stub => stub.GetLastWin32Error()).Return (-1).Repeat.Once())
           .Return (false);
+
       Assert.That (
           () => WindowFinder.FindWindows (new WindowFilterCriteria()),
           Throws.InstanceOf<Win32Exception>()
