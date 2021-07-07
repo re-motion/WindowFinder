@@ -17,5 +17,4 @@
 using System;
 using System.Reflection;
 
-[assembly: AssemblyTitle ("re-motion Win32 WindowFinder Library Unit Tests")]
 [assembly: AssemblyCulture ("")]

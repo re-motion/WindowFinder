@@ -6,6 +6,10 @@
     <CompanyUrl>http://www.rubicon.eu</CompanyUrl>
     <Copyright>Copyright (c) rubicon IT GmbH, www.rubicon.eu - Licensed under GNU LGPL 2.1 (or later)</Copyright>
     <ProductName>re-motion (www.re-motion.org)</ProductName>
+    <PackageLicenseExpression>LGPL-2.1-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>http://www.re-motion.org</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/re-motion/WindowFinder/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <DocumentationFileName>Remotion.WindowFinder</DocumentationFileName>
     <DocumentationRootPage>$(SolutionDirectory)Core\Doc\include\GettingStarted.aml</DocumentationRootPage>
     <DocumentationNamespaceSummaryFiles>$(SolutionDirectory)**\Doc\include\NamespaceDoc.xml</DocumentationNamespaceSummaryFiles>
