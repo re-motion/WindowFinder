@@ -23,20 +23,22 @@
     <DebugType Condition="'$(TargetFramework)' == 'net45'">Full</DebugType>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(ProjectType)' == 'Library'">
+  <PropertyGroup Condition="'$(ProjectType)' == 'Library' OR '$(ProjectType)' == 'WindowsLibrary'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>1591</NoWarn>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <IsPackable>True</IsPackable>
     <TargetFrameworks>net45</TargetFrameworks>
+    <TargetFrameworks Condition="'$(ProjectType)' == 'Library'">net5.0;$(TargetFrameworks)</TargetFrameworks>
+    <TargetFrameworks Condition="'$(ProjectType)' == 'WindowsLibrary'">net5.0-windows;$(TargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(ProjectType)' == 'Test'">
+  <PropertyGroup Condition="'$(ProjectType)' == 'WindowsTest'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn></NoWarn>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <IsPackable>False</IsPackable>
-    <TargetFrameworks>net45</TargetFrameworks>
+    <TargetFrameworks>net5.0-windows;net45</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -51,9 +53,9 @@
   <ItemGroup Condition="'$(ProjectType)' == 'Library'">
   </ItemGroup>
 
-  <ItemGroup Condition="'$(ProjectType)' == 'Test'">
+  <ItemGroup Condition="'$(ProjectType)' == 'WindowsTest'">
+    <PackageReference Include="CoreRhinoMocks" Version="3.6.1.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
-    <PackageReference Include="RhinoMocks" Version="3.6.1" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
   </ItemGroup>
