@@ -46,9 +46,6 @@
     <None Include="Customizations\Version.props">
       <SubType>Designer</SubType>
     </None>
-    <None Include="NuSpec\TemplateShared.nuspec" />
-    <None Include="NuSpec\bin\Debug\.gitmarker" />
-    <None Include="NuSpec\bin\Release\.gitmarker" />
     <None Include="packages.config" />
     <None Include="Remotion.build" />
     <None Include="Remotion.Local.build" />
