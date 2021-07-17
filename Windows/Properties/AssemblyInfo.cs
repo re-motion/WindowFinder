@@ -17,7 +17,5 @@
 using System;
 using System.Reflection;
 
-[assembly: AssemblyTitle ("re-motion Win32 WindowFinder Library")]
-[assembly: AssemblyDescription ("Implementation of the WindowFinder APIs for Win32.")]
 [assembly: AssemblyCulture ("")]
 [assembly: CLSCompliant (true)]
