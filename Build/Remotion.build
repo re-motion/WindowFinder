@@ -42,7 +42,6 @@
   </ItemGroup>
 
   <Import Project="$(RemotionBuildScriptPath)*.targets" />
-  <Import Project="$(MSBuildExtensionPackPath)MSBuild.ExtensionPack.tasks" />
   <Import Project="$(NuGetForMSBuildPath)NuGet.For.MSBuild.tasks" />
 
   <PropertyGroup>
