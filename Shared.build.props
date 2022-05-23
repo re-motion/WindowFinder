@@ -31,7 +31,7 @@
     <TargetFrameworks>net45</TargetFrameworks>
     <!--<TargetFrameworks Condition="'$(ProjectType)' == 'Library'">net6.0;$(TargetFrameworks)</TargetFrameworks>-->
     <!-- Workaround for RMWINFINDR-11: Running the build with a mixed configuration fails on the build server. -->
-    <TargetFrameworks Condition="'$(ProjectType)' == 'Library'">net6.0-windows;$(TargetFrameworks)</TargetFrameworks>
+    <TargetFrameworks Condition="'$(ProjectType)' == 'Library'">net6.0;$(TargetFrameworks)</TargetFrameworks>
     <TargetFrameworks Condition="'$(ProjectType)' == 'WindowsLibrary'">net6.0-windows;$(TargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
