@@ -14,4 +14,9 @@
     <RootNamespace>$(AssemblyName)</RootNamespace>
   </PropertyGroup>
 
+  <Target Name="Diags" BeforeTargets="Clean">
+<Message Importance="High" Text="VisualStudioVersion: $(VisualStudioVersion)" />
+
+  </Target>
+
 </Project>
