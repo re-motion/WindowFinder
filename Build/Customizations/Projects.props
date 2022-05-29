@@ -1,21 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<ReleaseProjectFiles Include="$(SolutionDirectory)Core\Core.csproj">
-			<CreateDocumentationFile>False</CreateDocumentationFile>
-		</ReleaseProjectFiles>
+  <PropertyGroup>
+    <NormalTestConfiguration Condition="'$(NormalTestConfiguration)' == ''">
+      Win_NET48 + NET48 + NoBrowser + NoDB + Debug + x86;
+      Win_NET48 + NET48 + NoBrowser + NoDB + Release + x86;
+      Win_NET48 + NET48 + NoBrowser + NoDB + Debug + x64;
+      Win_NET48 + NET48 + NoBrowser + NoDB + Release + x64;
+
+      <!-- Local-->
+      LocalMachine + NET48 + NoBrowser + NoDB + Debug + x86;
+      LocalMachine + NET48 + NoBrowser + NoDB + Release + x86;
+      LocalMachine + NET48 + NoBrowser + NoDB + Debug + x64;
+      LocalMachine + NET48 + NoBrowser + NoDB + Release + x64;
+
+      <!-- Exercise compatibility between installed .NET version, target framework and SQL Server -->
+      Win_NET48 + NET472 + NoBrowser + NoDB + Release + x64;
+      Win_NET48 + NET462 + NoBrowser + NoDB + Release + x64;
+      Win_NET472 + NET472 + NoBrowser + NoDB + Release + x64;
+      Win_NET472 + NET462 + NoBrowser + NoDB + Release + x64;
+      Win_NET462 + NET462 + NoBrowser + NoDB + Release + x64;
+    </NormalTestConfiguration>
+  </PropertyGroup>
+  <ItemGroup>
+    <ReleaseProjectFiles Include="$(SolutionDirectory)Core\Core.csproj">
+      <CreateDocumentationFile>False</CreateDocumentationFile>
+    </ReleaseProjectFiles>
     <ReleaseProjectFiles Include="$(SolutionDirectory)Windows\Windows.csproj">
-			<CreateDocumentationFile>False</CreateDocumentationFile>
+      <CreateDocumentationFile>False</CreateDocumentationFile>
       <!--<CreateNuGetPackageWithSymbolServerSupport>False</CreateNuGetPackageWithSymbolServerSupport>-->
       <!--<ExcludeFromDocumentation>False</ExcludeFromDocumentation>-->
-		</ReleaseProjectFiles>
-		<UnitTestProjectFiles Include="$(SolutionDirectory)Windows.UnitTests\Windows.UnitTests.csproj"/>
-		<!--<IntegrationTestProjectFiles Include="$(SolutionDirectory)IntegrationTests\IntegrationTests.csproj">
-			--><!-- Optional Metadata to override the defaults: --><!--
-			<IsDatabaseTest>False</IsDatabaseTest>
-			<IsWebTest>False</IsWebTest>
-			<TestingSetupBuildFile>$(SolutionDirectory)Build\TestingSetup.build</TestingSetupBuildFile>
-			<ExecutionRuntime>net-4.5</ExecutionRuntime>
-		</IntegrationTestProjectFiles>-->
-	</ItemGroup>
+    </ReleaseProjectFiles>
+    <UnitTestProjectFiles Include="$(SolutionDirectory)Windows.UnitTests\Windows.UnitTests.csproj">
+      <TestConfiguration>$(NormalTestConfiguration)</TestConfiguration>
+    </UnitTestProjectFiles>
+    <!--<IntegrationTestProjectFiles Include="$(SolutionDirectory)IntegrationTests\IntegrationTests.csproj">
+        --><!--Optional Metadata to override the defaults:--><!--
+            <IsDatabaseTest>False</IsDatabaseTest>
+            <IsWebTest>False</IsWebTest>
+            <TestingSetupBuildFile>$(SolutionDirectory)Build\TestingSetup.build</TestingSetupBuildFile>
+            <ExecutionRuntime>net-4.5</ExecutionRuntime>
+        </IntegrationTestProjectFiles>-->
+  </ItemGroup>
 </Project>

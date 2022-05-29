@@ -17,7 +17,5 @@
 using System;
 using System.Reflection;
 
-[assembly: AssemblyTitle ("re-motion WindowFinder Library")]
-[assembly: AssemblyDescription ("APIs for finding window instances based on filter criteria.")]
 [assembly: AssemblyCulture ("")]
 [assembly: CLSCompliant (true)]
